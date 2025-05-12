@@ -1,0 +1,94 @@
+/*|#MakVie-SAinte|*/
+
+@font-face {
+   font-family: 'maragsadisplay';
+   src: url('./font/maragsa-webfont.woff2') format('woff2'),
+        url('./font/maragsa-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+
+}
+
+*, *::before, *::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   word-break: break-all;
+}
+
+html {
+   font-size: 100%;
+}
+
+body {
+   background-color: #EFC88B;
+   color: #333;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   font-family: 'maragsadisplay', 'IBM Plex', serif;
+   letter-spacing: 10px;
+}
+
+.titre {
+   position: relative;
+}
+
+.titre span {
+   color: #FF1B1C;
+   font-size: clamp(40px, 13vw, 150px);
+   transition: 0.5s;
+   font-weight: 900;
+   will-change: transform;
+   display: inline-block;
+   cursor: pointer;
+   letter-spacing: 10px; 
+   padding-right: 10px;
+   padding-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+   .titre span {
+      letter-spacing: 0px !important; 
+      line-height: 0.9;
+      font-size: 40px !important;
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+   }
+   .titre span.initial-spacing { 
+     letter-spacing: 0px;
+   }   
+}
+
+.titre span.initial-spacing { 
+   will-change: transform;
+  letter-spacing: 5px;
+}
+
+.first span {
+   transform-origin: bottom;
+}
+
+.second span {
+   transform-origin: top;
+   transform: translateY(100%) rotateX(-90deg);
+}
+
+.second {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+/* HOVER */
+
+.titre:hover .first span {
+   transform: translateY(-100%) rotateX(-90deg);
+}
+.titre:hover .second span {
+   transform: translateY(0%) rotateX(0deg);
+}
+
+/* 925DEV */
